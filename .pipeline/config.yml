@@ -1,5 +1,5 @@
 ###
- # This file configures the project "Piper" pipeline of your project.
+ # This file configures the project 'Piper' pipeline of your project.
  # For a reference of the configuration concept and available options, please have a look into its documentation. 
 # 
 # The documentation for the most recent pipeline version can always be found at:
@@ -12,8 +12,8 @@
 ---
 general:
    verbose: true
-   pipeline: "sap-cloud-sdk" 
-   buildTool: "mta"
+   pipeline: 'sap-cloud-sdk' 
+   buildTool: 'mta'
 stages:
    Build:
       mavenExecuteStaticCodeChecks: false
@@ -26,17 +26,17 @@ stages:
       tmsUpload: false
    steps:
       cloudFoundryDeploy:
-         apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
-         org: "27edf2d4trial"
-         space: "dev"
-         cfCredentialsId: "cfdeploy"      
+         apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+         org: '27edf2d4trial'
+         space: 'dev'
+         cfCredentialsId: 'cfdeploy'      
          cloudFoundry: 
-            apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
-            org: "27edf2d4trial"
-            space: "dev"
-            credentialsId: "cfdeploy"
-            appName: ""
-         mtaDeployParameters: "-f --version-rule ALL"
+            apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+            org: '27edf2d4trial'
+            space: 'dev'
+            credentialsId: 'cfdeploy'
+            appName: '
+         mtaDeployParameters: '-f --version-rule ALL'
          verbose: true
    artifactPrepareVersion:
-      versioningType: "cloud_noTag"
+      versioningType: 'cloud_noTag'
