@@ -35,7 +35,7 @@ stages:
             org: '27edf2d4trial'
             space: 'dev'
             credentialsId: 'cfdeploy'
-            appName: '
+            appName: ''
          mtaDeployParameters: '-f --version-rule ALL'
          verbose: true
    artifactPrepareVersion:
