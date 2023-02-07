@@ -26,6 +26,10 @@ stages:
       tmsUpload: false
    steps:
       cloudFoundryDeploy:
+         apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+         org: "27edf2d4trial"
+         space: "dev"
+         cfCredentialsId: "cfdeploy"      
          cloudFoundry: 
             apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
             org: "27edf2d4trial"
