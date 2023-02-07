@@ -24,19 +24,17 @@ stages:
    Release:
       cloudFoundryDeploy: true
       tmsUpload: false
-   steps:
-      cloudFoundryDeploy:
+
+steps:
+   cloudFoundryDeploy:
+      cloudFoundry: 
          apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
          org: '27edf2d4trial'
          space: 'dev'
-         cfCredentialsId: 'cfdeploy'      
-         cloudFoundry: 
-            apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
-            org: '27edf2d4trial'
-            space: 'dev'
-            credentialsId: 'cfdeploy'
-            appName: ''
-         mtaDeployParameters: '-f --version-rule ALL'
-         verbose: true
-   artifactPrepareVersion:
-      versioningType: 'cloud_noTag'
+         credentialsId: 'cfdeploy'
+         appName: ''
+      mtaDeployParameters: '-f --version-rule ALL'
+      verbose: true
+
+artifactPrepareVersion:
+   versioningType: 'cloud_noTag'
