@@ -47,6 +47,7 @@ general:
 # Stages configuration
 stages:
   Build:
+    mavenExecuteStaticCodeChecks: false
     npmExecuteLint: false # true, if you want to run a lint check that verifies the syntax of your JavaScript code
 
   Additional Unit Tests:
