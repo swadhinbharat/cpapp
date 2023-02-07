@@ -10,70 +10,65 @@
 
 ### General project setup
 ---
-# general:
-#    verbose: true
-#    pipeline: 'sap-cloud-sdk' 
-#    buildTool: 'mta'
-# stages:
-#    Build:
-#       mavenExecuteStaticCodeChecks: false
-#       npmExecuteLint: false
-#    Additional Unit Tests:
-#       npmExecuteScripts: false
-#       karmaExecuteTests: false
-#    Release:
-#       cloudFoundryDeploy: true
-#       tmsUpload: false
-
-# steps:
-#    cloudFoundryDeploy:
-#       cloudFoundry: 
-#          apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
-#          org: '27edf2d4trial'
-#          space: 'dev'
-#          credentialsId: 'cfdeploy'
-#          appName: ''
-#       mtaDeployParameters: '-f --version-rule ALL'
-#       verbose: true
-
-# artifactPrepareVersion:
-#    versioningType: 'cloud_noTag'
-
-# Project configuration
 general:
-  pipeline: 'sap-cloud-sdk' # this line is mandatory
-  buildTool: 'mta' # or 'npm'
-
-# Stages configuration
+   verbose: true
+   pipeline: 'sap-cloud-sdk' 
+   buildTool: 'mta'
 stages:
-  Build:
-    mavenExecuteStaticCodeChecks: false
-    npmExecuteLint: false # true, if you want to run a lint check that verifies the syntax of your JavaScript code
+   Build:
+      mavenExecuteStaticCodeChecks: false
+      npmExecuteLint: false
+   Additional Unit Tests:
+      npmExecuteScripts: false
+      karmaExecuteTests: false
+   Release:
+      cloudFoundryDeploy: true
+      tmsUpload: false
 
-  Additional Unit Tests:
-    npmExecuteScripts: false
-
-  Release:
-    cloudFoundryDeploy: true # true, if you want to deploy to Cloud Foundry. If you set this parameter to true, the CloudFoundryDeploy step is mandatory
-    tmsUpload: false # true if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
-
-# Steps configuration
 steps:
+   cloudFoundryDeploy:
+      cloudFoundry: 
+         apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+         org: '27edf2d4trial'
+         space: 'dev'
+         credentialsId: 'cfdeploy'
+         appName: ''
+      mtaDeployParameters: '-f --version-rule ALL'
+      verbose: true
 
-  mtaBuild:
-    buildTarget: 'CF'
-    extensions: 'trial.mtaext' # live.mtaext for BTP Live landscape or trial.mtaext for BTP Trial Account
-    mtaBuildTool: 'cloudMbt'
+artifactPrepareVersion:
+   versioningType: 'cloud_noTag'
 
-  cloudFoundryDeploy: # only relevant, if you set the cloudFoundryDeploy parameter in the Release stage to true
-    cloudFoundry:
-      credentialsId: 'cfdeploy'
-      apiEndpoint: 'https://api.cf.us10.hana.ondemand.com/' # for example, https://api.cf.eu10.hana.ondemand.com
-      org: '27edf2d4trial' # your cloud foundry org name
-      space: 'dev' # your cloud foundry space name
-    mtaDeployParameters: '-f --version-rule ALL'
+# # Project configuration
+# general:
+#   pipeline: 'sap-cloud-sdk' # this line is mandatory
+#   buildTool: 'mta' # or 'npm'
 
-  # tmsUpload:            # only relevant, if you set the tmsUpload parameter in the Release stage to true
-  #   nodeName: 'QA'
-  #   credentialsId: 'tms'
-  #   customDescription: 'TMS Upload'
+# # Stages configuration
+# stages:
+#   Build:
+#     mavenExecuteStaticCodeChecks: false
+#     npmExecuteLint: false # true, if you want to run a lint check that verifies the syntax of your JavaScript code
+
+#   Additional Unit Tests:
+#     npmExecuteScripts: false
+
+#   Release:
+#     cloudFoundryDeploy: true # true, if you want to deploy to Cloud Foundry. If you set this parameter to true, the CloudFoundryDeploy step is mandatory
+#     tmsUpload: false # true if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
+
+# # Steps configuration
+# steps:
+
+#   mtaBuild:
+#     buildTarget: 'CF'
+#     extensions: 'trial.mtaext' # live.mtaext for BTP Live landscape or trial.mtaext for BTP Trial Account
+#     mtaBuildTool: 'cloudMbt'
+
+#   cloudFoundryDeploy: # only relevant, if you set the cloudFoundryDeploy parameter in the Release stage to true
+#     cloudFoundry:
+#       credentialsId: 'cfdeploy'
+#       apiEndpoint: 'https://api.cf.us10.hana.ondemand.com/' # for example, https://api.cf.eu10.hana.ondemand.com
+#       org: '27edf2d4trial' # your cloud foundry org name
+#       space: 'dev' # your cloud foundry space name
+#     mtaDeployParameters: '-f --version-rule ALL'
