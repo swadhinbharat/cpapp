@@ -15,22 +15,22 @@
     buildTool: "mta"
  stages:
     Build:
-       mavenExecuteStaticCodeChecks: false
-       npmExecuteLint: false
+      mavenExecuteStaticCodeChecks: false
+      npmExecuteLint: false
     Additional Unit Tests:
-       npmExecuteScripts: false
-       karmaExecuteTests: false
+      npmExecuteScripts: false
+      karmaExecuteTests: false
     Release:
-       cloudFoundryDeploy: true
-       tmsUpload: false
+      cloudFoundryDeploy: true
+      tmsUpload: false
     steps:
       cloudFoundryDeploy:
         cloudFoundry: 
-          apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
-          org: "27edf2d4trial"
-          space: "dev"
-          credentialsId: "cfdeploy"
-          appName: ""
+            apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+            org: "27edf2d4trial"
+            space: "dev"
+            credentialsId: "cfdeploy"
+            appName: ""
         mtaDeployParameters: "-f --version-rule ALL"
     artifactPrepareVersion:
       versioningType: "cloud_noTag"
