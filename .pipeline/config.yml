@@ -30,7 +30,7 @@
           org: "27edf2d4trial"
           space: "dev"
           credentialsId: "cfdeploy"
-          appName: "cpapp"
+          appName: ""
         mtaDeployParameters: "-f --version-rule ALL"
     artifactPrepareVersion:
       versioningType: "cloud_noTag"
