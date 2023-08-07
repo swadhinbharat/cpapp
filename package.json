@@ -15,7 +15,7 @@
     "devDependencies": {
         "@sap/ux-specification": "^1.102.16",
         "sqlite3": "^5.0.4",
-        "rimraf": "^3.0.2"
+        "rimraf": "^5.0.0"
     },
     "engines": {
         "node": "^16"
