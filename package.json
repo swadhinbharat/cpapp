@@ -18,7 +18,7 @@
         "rimraf": "^5.0.0"
     },
     "engines": {
-        "node": "^16"
+        "node": "^18.0.0"
     },
     "scripts": {
         "start": "cds run",
