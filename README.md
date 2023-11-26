@@ -27,4 +27,7 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 Well ...
 First test
 Second Test
+<<<<<<< HEAD
 Third Test
+=======
+>>>>>>> 2e85d454616bda96c4af4f8acb04edc4effe0c40
