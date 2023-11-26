@@ -7,18 +7,18 @@
     "private": true,
     "dependencies": {
         "@sap/cds": "^7.4.1",
+        "@sap/xssec": "^3",
         "express": "^4",
         "hdb": "^0.19.7",
-        "@sap/xssec": "^3",
-        "passport": "^0"
+        "passport": "^0",
+        "rimraf": "^5.0.5"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.120.0",
-        "sqlite3": "^5.1.6",
-        "rimraf": "^5.0.5"
+        "sqlite3": "^5.1.6"
     },
     "engines": {
-        "node": "^18.0.0"
+        "node": "^20.0.0"
     },
     "scripts": {
         "start": "cds run",
