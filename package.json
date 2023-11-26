@@ -27,7 +27,8 @@
         "undeploy": "cf undeploy cpapp --delete-services --delete-service-keys --delete-service-brokers",
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
         "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-        "publish": "rimraf resources mta_archives && mbt build --mtar archive && cf deploy mta_archives/archive.mtar --retries 1 -f"
+        "publish": "rimraf resources mta_archives && mbt build --mtar archive && cf deploy mta_archives/archive.mtar --retries 1 -f",
+        "rimraf": "./node_modules/rimraf/bin.js"
     },
     "sapux": [
         "app/risks",
