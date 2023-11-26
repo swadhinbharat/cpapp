@@ -10,11 +10,11 @@
         "@sap/xssec": "^3",
         "express": "^4",
         "hdb": "^0.19.7",
-        "passport": "^0"
+        "passport": "^0",
+        "rimraf": "^5.0.5"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.120.0",
-        "rimraf": "^5.0.5",
         "sqlite3": "^5.1.6"
     },
     "engines": {
