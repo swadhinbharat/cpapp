@@ -11,7 +11,7 @@
         "express": "^4",
         "hdb": "^0.19.7",
         "passport": "^0",
-        "rimraf": "^5.0.5"
+        "rimraf": "^6.0.0"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.120.0",
