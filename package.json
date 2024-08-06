@@ -7,7 +7,7 @@
     "private": true,
     "dependencies": {
         "@sap/cds": "^7.4.1",
-        "@sap/xssec": "^3",
+        "@sap/xssec": "^4.0.0",
         "express": "^4",
         "hdb": "^0.19.7",
         "passport": "^0",
