@@ -6,7 +6,7 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
-        "@sap/cds": "^8.9.1",
+        "@sap/cds": "^9.0.0",
         "@sap/xssec": "^4.0.0",
         "express": "^5.0.0",
         "hdb": "^2.0.0",
