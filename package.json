@@ -11,22 +11,24 @@
         "express": "^4.21.2",
         "hdb": "^2.0.0",
         "passport": "^0",
-        "rimraf": "^6.0.0"
+        "rimraf": "^6.0.0",
+        "@cap-js/hana": "^2"
     },
     "devDependencies": {
         "@cap-js/sqlite": "^2.0.2",
-        "@sap/ux-specification": "^1.120.0"
+        "@sap/cds-dk": ">=8",
+        "@sap/ux-specification": "UI5-1.109"
     },
     "engines": {
         "node": "^22.0.0"
     },
     "scripts": {
-        "start": "cds run",
+        "start": "cds-serve",
         "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-mitigations": "cds watch --open mitigations/webapp/index.html?sap-ui-xx-viewCache=false",
         "undeploy": "cf undeploy cpapp --delete-services --delete-service-keys --delete-service-brokers",
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1 -f",
         "publish": "rimraf resources mta_archives && mbt build --mtar archive && cf deploy mta_archives/archive.mtar --retries 1 -f",
         "rimraf": "./node_modules/rimraf/bin.js"
     },
@@ -46,6 +48,11 @@
             },
             "db": {
                 "kind": "sql"
+            },
+            "[hybrid]": {
+                "db": {
+                    "kind": "hana"
+                }
             }
         }
     }
