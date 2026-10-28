@@ -20,7 +20,7 @@
         "@sap/ux-specification": "UI5-1.110"
     },
     "engines": {
-        "node": "^24.0.0"
+        "node": "^26.0.0"
     },
     "scripts": {
         "start": "cds-serve",
